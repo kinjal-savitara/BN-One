@@ -21,7 +21,8 @@ export default function Home() {
    const scriptURL = 'https://script.google.com/macros/s/AKfycby61eqqZZq955xWNlNYwY1EX0PbzAaxWFrdDUKuMKyaFVRUpSLKpIfxPVXB9khsiSM5/exec';
 
   // Brochure PDF URL
-  const brochureURL = "https://cdn.storage.teliportme.com/360-content-items-pdf/6492298/4cfc7be6-7434-11f0-bcdb-000d3a076e09.pdf";
+  // const brochureURL = "https://cdn.storage.teliportme.com/360-content-items-pdf/6492298/4cfc7be6-7434-11f0-bcdb-000d3a076e09.pdf";
+ const brochureURL = "https://savitarrealty.com";
 
    
    useEffect(() => {
