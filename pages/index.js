@@ -16,6 +16,7 @@ export default function Home() {
     projectName: "BN ONE", // hidden field
   });
   const [loading, setLoading] = useState(false);
+   const [iframeUrl, setIframeUrl] = useState("");
 
  // Google Apps Script Web App URL
    const scriptURL = 'https://script.google.com/macros/s/AKfycby61eqqZZq955xWNlNYwY1EX0PbzAaxWFrdDUKuMKyaFVRUpSLKpIfxPVXB9khsiSM5/exec';
@@ -29,6 +30,23 @@ export default function Home() {
     document.documentElement.style.height = "100%";
     document.body.style.height = "100%";
     document.body.style.margin = "0";
+
+
+    const params = new URLSearchParams(window.location.search);
+    const tour = params.get("tour");
+    
+
+    let url = "https://tours.savitarrealty.in/embed/tour/eb779add"; // default
+    if (tour === "virtual-tour") {
+      url = "https://biganto.com/tour/48214/?iframe=1";
+    } else if (tour === "virtual-tour-a-404") {
+      url = " ";
+    } else if (tour === "virtual-tour-b-402") {
+      url = " ";
+    }
+
+    setIframeUrl(url);
+    
   }, []);
 
    
@@ -69,8 +87,9 @@ export default function Home() {
  
   return (
      <div style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "100%", zIndex: 9999 }}>
-         {!showForm&& (<iframe
-              src="https://tours.savitarrealty.in/embed/tour/eb779add"
+         {!showForm && iframeUrl != ''&& (<iframe
+              // src="https://tours.savitarrealty.in/embed/tour/eb779add"
+              src={iframeUrl}
               frameBorder="0"
               scrolling="no"
               width="100%"
