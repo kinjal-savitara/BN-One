@@ -39,8 +39,8 @@ export default function Home() {
     let url = "https://tours.savitarrealty.in/embed/tour/eb779add"; // default
     if (tour === "virtual-tour") {
       url = "https://biganto.com/tour/48214/?iframe=1";
-    } else if (tour === "virtual-tour-a-404") {
-      url = " ";
+    } else if (tour === "interior") {
+      url = "https://biganto.com/tour/48403/?iframe=1";
     } else if (tour === "virtual-tour-b-402") {
       url = " ";
     }
